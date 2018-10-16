@@ -1,0 +1,56 @@
+<md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Tasks">
+            <md-content class="md-padding">
+                <table class='table'>
+                    <tr>
+                        <th class='md-title md-primary' ng-click='sortColumn("Title")'>Title</th>
+                        <th class='md-title md-primary' ng-click='sortColumn("Body")'>Description</th>
+                        <th class='md-title md-primary' ng-click='sortColumn("Priority")'>Priority</th>
+                    </tr>
+                    <tr class="table-row" ng-repeat='item in vm.items.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | orderBy:column:reverse'>
+                        <td class='md-body-1'>{{item.Title}}</td>
+                        <td class='md-body-1'>{{item.Body}}</td>
+                        <td class='md-body-1'>{{item.Priority}}</td>
+                    </tr>
+                </table>
+                <ul uib-pagination template-url='' total-items="10" ng-model="currentPage" ng-change="pageChanged()" items-per-page="itemsPerPage"
+                    max-size="maxSize"></ul>
+            </md-content>
+        </md-tab>
+        <md-tab label="Milestones">
+            <md-content class="md-padding">
+                <table class='table'>
+                    <tr>
+                        <th class='md-title md-primary'>Title</th>
+                        <th class='md-title md-primary'>Description</th>
+                        <th class='md-title md-primary'>Priority</th>
+                    </tr>
+                    <tr class="table-row" ng-repeat='task in tasks.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))'>
+                        <td class='md-body-1'>{{task.Title}}</td>
+                        <td class='md-body-1'>{{task.Body}}</td>
+                        <td class='md-body-1'>{{task.Priority}}</td>
+                    </tr>
+                </table>
+                <ul uib-pagination template-url='' total-items="task.length" ng-model="currentPage" ng-change="pageChanged()" items-per-page="itemsPerPage"></ul>
+            </md-content>
+        </md-tab>
+        <md-tab label="All">
+            <md-content class="md-padding">
+                <table class='table'>
+                    <tr>
+                        <th class='md-title md-primary'>Title</th>
+                        <th class='md-title md-primary'>Description</th>
+                        <th class='md-title md-primary'>Priority</th>
+                    </tr>
+                    <tr class="table-row" ng-repeat='task in tasks.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))'>
+                        <td class='md-body-1'>{{item.Title}}</td>
+                        <td class='md-body-1'>{{item.Body}}</td>
+                        <td class='md-body-1'>{{item.Priority}}</td>
+                    </tr>
+                </table>
+                <ul uib-pagination template-url='' total-items="task.length" ng-model="currentPage" ng-change="pageChanged()" items-per-page="itemsPerPage"></ul>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>
