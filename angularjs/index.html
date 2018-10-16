@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Items</title>
+</head>
+<body>
+    <div ng-non-bindable>
+    <div id="list-items" layout-margin ng-cloak>
+        <list-items></list-items>
+    </div>
+</div>
+
+
+<!-- Vendor -->
+<script src="/app/assets/libs/angular-1.6.4/angular-animate.min.js"></script>
+<script src="/app/assets/libs/angular-1.6.4/angular-aria.min.js"></script>
+<script src="/app/assets/libs/angular-1.6.4/angular-messages.min.js"></script>
+<script src="/app/assets/libs/angular-1.6.4/angular-sanitize.min.js"></script>
+<script src="/app/assets/libs/angular-ui/angular-ui-bootstrap.js"></script>
+<script src="/app/assets/libs/angular-material/angular-material.min.js"></script>
+
+<!-- App -->
+<script src="/app/components/list-items/list-items.app.js"></script>
+<script src="/app/components/list-items/list-items.component.js"></script>
+<script src="/app/shared/list-items/list-items.service.js"></script>
+
+<script type="text/javascript">
+angular.bootstrap(document.getElementById('list-items'), ['listItemsApp']);
+</script>
+
+</body>
+</html>
